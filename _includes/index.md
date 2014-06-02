@@ -33,11 +33,6 @@ In the end, participants will be able to rewrite a paper of their own in an open
 
 This website as well as all the material included and used at the workshop are hosted as an open GitHub repository at [this url](https://github.com/darribas/WooWii). This means you can clone it and access not only the entire website and materials but also the revision history tracked using git. Participants are advised to bring their own laptop.
 
-All materials included in the site are licensed under a [Creative Commons
-4.0](https://github.com/darribas/WooW/archive/master.zip)
-open license, which means you can use, remix and redistribute them freely as
-long as you give proper attribution.
-
 ### *Who*
 
 The workshop was inspired by a previous edition
