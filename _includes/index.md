@@ -36,11 +36,9 @@ If you would like to register, please **send an email to Dani Arribas-Bel ([d.ar
 
 This website, as well as all the material included and used at the workshop, are hosted as an open GitHub repository in [this url](https://github.com/darribas/WooWii). This means you can clone it and access not only the entire website and materials but also the revision history tracked using git. Participants should bring their own laptop to follow along the hands-on sessions.
 
-### *Organizers*
+### *Organizers and sponsor*
 
 The workshop was inspired by a previous edition ([WooW](http://darribas.org/WooW)) and conceived by [Dani Arribas-Bel](http://darribas.org) from the University of Birmingham in the UK and [Thomas De Graaff](http://www.thomasdegraaff.net/) from the VU University Amsterdam in The Netherlands.
-
-### *Sponsor*
 
 The workshop is kindly supported by the EU [FOSTER](http://www.fosteropenscience.eu/) project.
 
