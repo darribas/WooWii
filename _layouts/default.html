@@ -1,51 +1,83 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>WooW-II</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{ site.data.instructor.name }}">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.course.description }}{% endif %}">
 
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="index.html">WooW-II</a></h1>
-        <p> <b> [Workshop on open Workflows 2.0] </b> </p>
+  <title>{{site.data.course.number}} &mdash; {{page.title}}</title>
 
-        <!--
-        <p class="view"><a href="call.html">Call</a></p>
-        -->
+  <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/course-site-custom.css" rel="stylesheet">
 
-      </header>
-      <section>
-      {{ content }}
-      </section>
-      <footer>
+  <!--[if lt IE 9]>
+    <script src="{{ site.baseurl }}/assets/js/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-<p></p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span
-xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-property="dct:title" rel="dct:type">&quot;Workshop on open Workflows-II&quot;</span> by <a
-xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org"
-property="cc:attributionName" rel="cc:attributionURL">Daniel Arribas-Bel</a> 
-and <a
-xmlns:cc="http://creativecommons.org/ns#" href="http://www.thomasdegraaff.net"
-property="cc:attributionName" rel="cc:attributionURL">Thomas De Graaff</a> 
-is licensed under a <a rel="license"
-href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</head>
+<body>
 
-        <p><small>Theme inspired by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+  <!-- Static navbar -->
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ site.baseurl }}/index.html">{{site.data.course.number}}</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li{% if page.category == "home" %} class="active"{% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
+          <li{% if page.category == "syllabus" %} class="active"{% endif %}><a href="{{ site.baseurl }}/syllabus.html">Syllabus</a></li>
+          <li class="dropdown{% if page.category == "note" %} active{% endif %}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              {% if site.notes[0] %}
+              {% for note in site.notes %}
+              <li><a href="{{site.baseurl}}{{note.url}}">{{note.title}}</a></li>
+              {% endfor %}
+              {% else %}
+              <li class="dropdown-header">No notes posted</li>
+              {% endif %}
+            </ul>
+          </li>
+          <li class="dropdown{% if page.category == "assignment" %} active{% endif %}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              {% if site.assignments[0] %}
+              {% for assignment in site.assignments %}
+              <li><a href="{{site.baseurl}}{{assignment.url}}">{{assignment.title}}</a></li>
+              {% endfor %}
+              {% else %}
+              <li class="dropdown-header">No assignments posted</li>
+              {% endif %}
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+  </div>
+
+  <div class="container" id="body">
+    {{content}}
+  </div>
+
+  <div id="footer">
+    <div class="container text-muted small">
+      {% include credits_and_license.html %}
+    </div>
+  </div>
+
+<!--jQuery & Twitter Bootstrap JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+
+</body>
 </html>
