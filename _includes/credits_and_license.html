@@ -1,4 +1,6 @@
-Content by {% if site.data.instructor.url %}<a href="{{site.data.instructor.url}}">{{site.data.instructor.name}}</a>{% else %}{{site.data.instructor.name}}{% endif %}.
+Content by {% if site.data.instructor.dani %}<a href="{{site.data.instructor.dani_url}}">{{site.data.instructor.dani}}</a>{% else %}{{site.data.instructor.name}}{% endif %}
+and
+{% if site.data.instructor.thomas %}<a href="{{site.data.instructor.thomas_url}}">{{site.data.instructor.thomas}}</a>{% else %}{{site.data.instructor.name}}{% endif %}.
 
 {% if site.data.license %}
   Content licensed under <a href="{{site.data.license.url}}">{{site.data.license.name}}</a>.
