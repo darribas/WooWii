@@ -17,20 +17,21 @@ Room info here.
 
 [Lunch]
 
-* **[1pm-3pm]** Typesetting
+* **[1pm-3pm]** Version control and task automation
+    * git
+    * make
+
+[Break]
+
+* **[3:30pm-5:30pm]** Typesetting
     * Markdown and LaTeX
     * Bibtex
     * pandoc
 
-[Break]
-
-* **[3:30pm-5:30pm]** Data analysis
-    * R
-
 ### Day 2 - Saturday Sept. 6th.
 
-* **[9am-12am]** Version control
-    * git
+* **[9am-12am]** Data analysis
+    * R
 
 * **[12am-1pm]** Online publishing
 
