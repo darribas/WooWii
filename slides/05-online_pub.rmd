@@ -1,0 +1,45 @@
+---
+title: "Online publishing"
+author: "Thomas de Graaff & Daniel Arribas-Bel"
+date: "September 6, 2014"
+output:
+  revealjs_presentation:
+    mathjax: default
+    pandoc_args:
+    - --css
+    - fig/journal.css
+    transition: linear
+  ioslides_presentation: default
+  beamer_presentation:
+    slide_level: 2
+---
+
+# Introduction
+
+## Recap
+
+1. Ideally everything is based on text
+2. Markdown is a very easy markup language
+3. Pandoc can combines languages and convert to pdf and html
+4. This means that your writings (articles & presentation) can be converted simultaneously to:
+    + pdf for dead trees
+    + html to be published on *your* website
+    
+## Goal
+
+> to publish your results as a visible internet page
+
++ together with the rest of your analysis
+    + 
+
+# Presentations and websites
+
+## HTML slides
+
++ Easy to 
+
+# Github
+ 
+# Other publication channels
+
+# Conclusionary remarks

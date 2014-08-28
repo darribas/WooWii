@@ -5,39 +5,44 @@ date: "September 5, 2014"
 output:
   revealjs_presentation:
     mathjax: default
-    pandoc_args:
-    - --css
-    - fig/journal.css
+    pandoc_args: [ "--slide-level","2"]
     transition: linear
-  ioslides_presentation: default
   beamer_presentation:
     slide_level: 2
+  ioslides_presentation: default
 ---
 
 # Introduction
 
 ## *Why* this workshop?
 
-- Interest in workflow tools
-- Increasing need for openness & transparancy
+- In the *social sciences* few attention to what tools to use (and why they make sense)
 
-    * from journals, universities and government
-    * increase in cooperation (over wider distances)
-    * access to your own files
+- Increasing need/interest for/in openness & transparancy
 
-- In the *social sciences* few attention to what tools to use (and why)
+    - from journals, universities and governments
+    - increase in cooperation (over wider distances)
+    - access to your own files
+    - make yourself more visible 
+
+- Better workflows actually increases reproducability and thus
+
+    - productivity
+    - contributions to the field at large 
+    - visibility of errors 
 
 ## What we want (and don't want) with this workshop 
 
-- We are not advocating particular tools
-- instead, we are more interested in the principles behind a good open (scientific) workflow, aware of the facts that
+- We are mostly interested in the principles behind a good open (scientific) workflow, aware of the facts that
 
-    * there is no final, optimal, set of workflow tools
-    * investment is very costly
-    
-- aiming for a broader discussion 
-- and stimulating a wider use
+    - there is no final, optimal, set of workflow tools
+    - investment is very very costly
 
+- However, being a practical workshop we do
+
+    - work with a specific set of tools (R, markdown, pandoc, git) 
+    - which is probably most straightforward to use
+    - enables us *in this workshop* to  make a paper reproducable and open
 
 # Workflow 
 
