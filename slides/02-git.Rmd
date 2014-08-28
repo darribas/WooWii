@@ -481,22 +481,44 @@ nothing to commit, working directory clean
 
 -----
 
-# Task automation - *What*
+# Task automation
 
-* Avoid manually repeating tasks
-* Scripting...
+# Task automation 
 
-# Task automation - *Why*
+*A button to push and reproduce*
 
-* Lazier/more efficient
-* Less prone to errors
+## *What*
+
+* It is important to keep things **modular**, **flexible** and **separate**, 
+  as long as it's possible
+* That also implies as a project grows larger and more complex, managing it
+  and keep it easily reproducible becomes harder and more involved
+* **Task automation** is based on the idea that some of the steps needed to
+  reproduce and output can be programmed (or scripted)
+* A sequence of all the steps and order, much like a cooking recipe, can be
+  encapsulated in a file that can be re-run
+
+## *Why*
+
+* **Efficiency**: avoid doing manually the same thing over and over
+* **Correctness**: less prone to errors
+* **Big picture design**: Forces to always keep in mind the overall structure of the project 
+
+# `make`
+
+* Very old (stable) piece of free software
+* Still used today
+* Designed to make possible to compile complicated code projects
+* *Glue* of the Unix mantra: "do one thing, and do it very well".
+
+The idea is to understand a research project (e.g. paper) as a code project
+where, to obtain certain outcomes (e.g. final paper version), one needs to
+complete a series of steps in a particular order (clean data, run regressions,
+write paper).
 
 # 
 
-<p><a rel="license" href="http://www.fosteropenscience.eu/"><img
-alt="FOSTER" style="border-width:0"
-src="http://www.fosteropenscience.eu/wp-content/uploads/2014/02/cropped-FOSTER_logo_final_128.png" /></a><br />
-</a></p>
+![FOSTER](fig/fosterlogo.png)
 
 Content by [Dani Arribas-Bel](http://darribas.org) and [Thomas De Graaff](http://www.thomasdegraaff.net/),
 licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
