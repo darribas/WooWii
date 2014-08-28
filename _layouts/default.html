@@ -51,6 +51,8 @@
               {% endif %}
             </ul>
           </li>
+          <li{% if page.category == "requirements" %} class="active"{% endif %}><a
+              href="{{ site.baseurl }}/requirements.html">Requirements</a></li>
           <li{% if page.category == "download" %} class="active"{% endif %}><a
               href="{{ site.baseurl }}/download.html">Download</a></li>
         </ul>
