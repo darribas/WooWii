@@ -1,15 +1,17 @@
 ---
 title: "Introduction"
-author: "Thomas de Graaff & Daniel Arribas-Bel"
+author: "Daniel Arribas-Bel & Thomas de Graaff"
 date: "September 5, 2014"
 output:
-  revealjs_presentation:
-    mathjax: default
-    pandoc_args: [ "--slide-level","2"]
-    transition: linear
   beamer_presentation:
     slide_level: 2
   ioslides_presentation: default
+  revealjs_presentation:
+    mathjax: default
+    pandoc_args:
+    - --slide-level
+    - '2'
+    transition: linear
 ---
 
 # Introduction
@@ -18,31 +20,37 @@ output:
 
 - In the *social sciences* few attention to what tools to use (and why they make sense)
 
-- Increasing need/interest for/in openness & transparancy
+- Increasing *need* for/in openness & transparancy
 
     - from journals, universities and governments
     - increase in cooperation (over wider distances)
     - access to your own files
     - make yourself more visible 
 
-- Better workflows actually increases reproducability and thus
+- Why *we* want to give this workshop
 
-    - productivity
-    - contributions to the field at large 
-    - visibility of errors 
+    - implementation of an earlier overview workshop
+    - our goal is to give these kinds of workshops on large conferences
 
 ## What we want (and don't want) with this workshop 
 
 - We are mostly interested in the principles behind a good open (scientific) workflow, aware of the facts that
 
     - there is no final, optimal, set of workflow tools
-    - investment is very very costly
+    - investment is very, very costly
 
 - However, being a practical workshop we do
 
-    - work with a specific set of tools (R, markdown, pandoc, git) 
-    - which is probably most straightforward to use
+    - work with a specific set of tools (R, markdown, pandoc, git) which
     - enables us *in this workshop* to  make a paper reproducable and open
+    
+## Related work 
+
+- Inspired by Kieran Healey's (associate professor in sociology) work: [Choosing your Workflow Applications](http://kieranhealy.org/files/misc/workflow-apps.pdf)
+
+- Courses for reproducable research seems to pop up everywhere (but mostly in datascience courses):
+    - Datascience course: [https://www.coursera.org/](https://www.coursera.org/)
+    - Tools for Reproducible Research [http://kbroman.org/Tools4RR/](http://kbroman.org/Tools4RR/)
 
 # Workflow 
 
@@ -53,42 +61,29 @@ output:
 
 * Open workflow: One that enhances *transparency*, *collaboration* and *reproducibility*
 
-## Empirical cycle
+## Research cycle
 * Read other papers
 * Think of a brilliant idea
 * Do:
     1. Collect data
-    2. Transform data
+    2. Transform/manipulate data
     3. Analyze data
     4. Write up results
     5. Present results
     6. Go back to 1. until satisfied
-* Send paper to journal and go back once again to i. until referees satisfied
-* And... documenting throughout the entire process!!!
-
-## Theoretical cycle
-* Read other papers
-* Think of a brilliant idea
-* Do:
-    1. State assumptions
-    2. Model (simulate)
-    3. Analyze model outcome
-    4. Write up results
-    5. Present results
-    6. Go back to i. until satisfied
-* Send paper to journal and go back once again to i. until referees satisfied
-* And... documenting throughout the entire process!!!
+* Send paper to journal and go back once again to 1. until referees satisfied
+* And... document throughout the entire process!!!
 
 ## Why bother about a workflow or tools?
 
-* Good scientific practice: *document how you have achieved your results*
+- Good scientific practice: *document how you have achieved your results*; this ensures
 
-* Reproducibility
-* Transparency
-* Modularity
-* Portability (across systems and users)
-* Efficiency
-* Self-sanity
+    - Reproducibility 
+    - Transparency
+    - Modularity
+    - Portability (across systems and users)
+    - Efficiency
+    - Self-sanity
 
 ## Why should it be open?
 
@@ -98,8 +93,9 @@ output:
 * Modularity
 * Portability (across systems and users)
 * Efficiency
+* Visibility
 
-## When should I adopt an open workflow?
+## When should I adopt an open reproducable workflow?
 
 * The sooner the better
 * But think twice about which one (switching is costly)
@@ -109,116 +105,139 @@ output:
 
 Lao-tzu
 
-# Tools for ...
-## open workflows
+# Reproducability
 
-## Text editting
+## In computation science:
 
-* Plain text is **simple**, light, cross-platform, flexible...
-* Many **academic** tools are based on plain text (typesetting systems, scripting
-        languages, bibliography managers)
-* **Good investment** to learn a rich text editor ("learn once, use for
-        everything"):
+> The data and code used to make a finding are available and they are sufficient for an independent researcher to recreate the finding (Peng, 2011)
+
+- Literature programming (Donald E. Knuth, 1984):
+
+    - weaving of **code**, **documentation** and **output** (articles, presentations, websites) 
+
+## In the social sciences?
+
+- Complete reproducability often not feasible
+    - qualitative research
+    - propietary data (?)
+- but you can come a long way, especially with
+    - theoretical work
+    - quantitative (e.g., statistical or simulation) work
+
+- Goal should be more to make your research as reproducable *as possible*
+
+## Code, documentation and output
+
+1. Synonyms
+
+2. All based on text files
+
+3. Encompasses almost anything
+    - data itself
+    - set of commands for data cleaning and statistical analysis
+    - database with references 
+    - transcript of interviews
+    - text for aticles, presentations or websites
     
-    * Efficient typing (command vs. insert modes)
-    * Syntax highlighting and indenting
-    * Shortcuts, macros and templates
-    * Consistent look, feel and behaviour
+4. Only output is displayed/interpreted differently (e.g., in a browser or pdf viewer)
+
+## Our goal (not being ambitious)
+
+What we want is that with *one single* command we
+
+- read in and transform our data
+- run the analysis
+- create output (tables and figures)
+- combine output with text and references
+- create presentation material (paper, slides, webpages) and
+- publish presentation material on an open repository
+
+This all under a full fledged versioning control system 
+
+## Tools for reproducability
+
+- Markup lanaguages
+    - Markdown
+    - LaTeX 
+    - HTML
     
-* Examples: Vim, Emacs, other (TextMate, Sublime text, etc.,...)
+- Terminal tools (GNU make, diff, pandoc)
+    
+- Versioning system (Git & VCN)
 
-## Text editing
+- Reference manager (bibdesk/Mendeley)
 
-Vim demo...
+## Tools for reproducability (cnt.)
 
-* Command vs Insert mode
-* Syntax highlighting
-* LaTeX shortcuts
-* Python indenting
+- Statistical software (pure command line driven): Python and R 
 
-## Beautiful (and efficient) typesetting
+- Environments
+    - [R](http://www.rproject.org/) and [Rstudio](http://www.rstudio.com) environment
+    - Python and [iPython notebook](http://ipython.org/notebook.html) environment
+    - Python and [Sumatra](http://neuralensemble.org/sumatra)
+    - Emacs [org mode](http://orgmode.org/) 
+    
+## Tools for openness
 
-* Documentation of progress, presentation of results (paper or slides) and
-  final products depend on this
-* **plain text** + **markup languages** = very powerful
+- Repositories:
+    - Github (host webpages as well)
+    - Bitbucket
 
-    * Detach content inputting from layout and styling
-    * One source, multiple outputs (paper, slides, website...)
+- R packages [http://cran.r-project.org/](http://cran.r-project.org/)
 
-* Examples: LaTeX, Markdown, Org
+- iPython notebook viewer [http://nbviewer.ipython.org/](http://nbviewer.ipython.org/)
 
-## Beautiful (and efficient) typesetting
+## Examples
 
-**LaTeX** and **Beamer**...
+*Reproducible Research with R and RStudio* Book1
 
-* General template
-* Sectioning
-* Equations (inline, outside)
-* Table
+- [https://github.com/christophergandrud/Rep-Res-Book](https://github.com/christophergandrud/Rep-Res-Book)
 
-**Markdown**...
-
-## Managing lists of papers
-
-* *One reference list to rule them all*
-* Create the reference and never worry about proper inserting
-
-    * Bibtex
-    * Reference manager
-    * Online services (e.g. Mendeley)
-
-* Bibtex demo...
-
-## Analyzing data
-
-* **Platforms** for statistical analysis & **scripting languages**
-* Examples: Python, R, STATA
-* The power of code vs. point-and-click
-
-    * **Flexibility** (Python)
-    * Typically **wider range** of methods (STATA)
-    * **Extensible** and updated more rapidly (R)
-    * **Reproducible** and transparent (remember *exactly* what you did)
-
-## Analyzing data
-
-IPython notebook demo...
-
-* Load up data
-* Create descriptives
-* Scatter plot
-* Run a model and simple print
-* Print LaTeX output
-
-## Saving the workflow
-
-**Backup**: "You don't need it until you really need it"
-
-* Security copy of all your (valuable) documents
-* External drive vs. Cloud solution
-* Software to make the process painless or automated
-* Many options: TimeMachine, Dropbox, Amazon Glacier...
-
-## Saving the workflow
-
-**Versioning control**: *"How did I get to that table of results?"*
-
-* Save snapshots of a project in an intelligent way
-* Allows to trace the *history* of a project/document (very neat [example](http://flowingdata.com/2012/11/30/time-lapse-writing-of-a-research-paper))
-* Very well developed for code development
-* Examples: DropBox, git, svn...
-
-# Putting it all together
-
-Amsterdam paper example:
+Amsterdam paper example using ipython notebook:
 
 * [http://darribas.org/buzz_adam](http://darribas.org/buzz_adam)
 
-#
+## What we use in this workshop
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is
-licensed under a <a rel="license"
-href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
-Attribution 4.0 International License</a>.
+1. R and RStudio (with the `knitr` package)
+2. Markdown language
+3. Bibdesk/Mendeley
+4. Git and Github
+5. GNU make
+
+Only implicitly we make use of LaTeX, BibTex, HTML and pandoc (all under the hood of RStudio)
+
+## Schedule Day 1 - Friday Sept. 5th
+
+- [9am--12am] Introduction
+    - Concepts behind open workflows
+    - Overview of tools
+    - Install session
+
+- Lunch
+
+- [1pm--3pm] Version control and task automation
+    - git and make
+
+- [3:30pm--5:30pm] Typesetting
+    - Markdown, LaTeX and BibTex
+    - pandoc
+    
+- Diner 
+
+## Schedule Day 2 - Saturday Sept. 6th.
+
+- [9am--12am] Data analysis
+    - R and RStudio
+    
+- [12am--1pm] Online publishing
+
+## Loose ends...
+
+- Questions?
+
+
+This workshop is financially supported by FOSTER. 
+![Foster logo](fig/FOSTER-logo-small.jpg)
+
+
