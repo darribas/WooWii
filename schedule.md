@@ -6,13 +6,23 @@ layout: default
 
 ## Schedule
 
+### Overview
+
+#### Rooms
+
 | Day              | Location |
 -----------------|-------------
 | Friday 5 sept.:  |   10A-13 |
 | Saturday 6 sept.:| 	12A-36 |
 
+#### Contacts
 
-### Day 1 - Friday Sept. 5th.
+De Boelelaan 1105; 1081 HV; Amsterdam 
+Tel: +31 (0)20 5986092
+
+### Detailed schedule 
+
+#### Day 1 - Friday Sept. 5th.
 
 - **[9am-12am]** Introduction
     * Concepts behind open workflows
@@ -34,7 +44,11 @@ layout: default
     * Bibtex
     * pandoc
 
-### Day 2 - Saturday Sept. 6th.
+[Diner]
+
+- Location and time: To be announced
+
+#### Day 2 - Saturday Sept. 6th.
 
 - **[9am-11am]** Data analysis
     * R
