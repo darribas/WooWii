@@ -3,9 +3,9 @@ title: "Introduction"
 author: "Daniel Arribas-Bel & Thomas de Graaff"
 date: "September 5, 2014"
 output:
+  ioslides_presentation: default
   beamer_presentation:
     slide_level: 2
-  ioslides_presentation: default
   revealjs_presentation:
     mathjax: default
     pandoc_args:
@@ -62,17 +62,8 @@ output:
 * Open workflow: One that enhances *transparency*, *collaboration* and *reproducibility*
 
 ## Research cycle
-* Read other papers
-* Think of a brilliant idea
-* Do:
-    1. Collect data
-    2. Transform/manipulate data
-    3. Analyze data
-    4. Write up results
-    5. Present results
-    6. Go back to 1. until satisfied
-* Send paper to journal and go back once again to 1. until referees satisfied
-* And... document throughout the entire process!!!
+
+![Research cycle](fig/ResearchCycle.pdf)
 
 ## Why bother about a workflow or tools?
 
