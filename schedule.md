@@ -6,10 +6,10 @@ layout: default
 
 ## Schedule
 
-Day             | Location
-----------------|---------
-Friday 5 sep |   10A-13
-Saturday 6 sep| 	12A-36
+| Day              | Location |
+-----------------|-------------
+| Friday 5 sept.:  |   10A-13 |
+| Saturday 6 sept.:| 	12A-36 |
 
 
 ### Day 1 - Friday Sept. 5th.
