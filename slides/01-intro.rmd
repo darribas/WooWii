@@ -3,9 +3,9 @@ title: "Introduction"
 author: "Daniel Arribas-Bel & Thomas de Graaff"
 date: "September 5, 2014"
 output:
-  ioslides_presentation: default
   beamer_presentation:
     slide_level: 2
+  ioslides_presentation: default
   revealjs_presentation:
     mathjax: default
     pandoc_args:
@@ -29,8 +29,8 @@ output:
 
 - Why *we* want to give this workshop
 
-    - implementation of an earlier overview workshop
-    - our goal is to give these kinds of workshops on large conferences
+    - intrinsic interest
+    - our goal: pre-conferences workshops / courses
 
 ## What we want (and don't want) with this workshop 
 
@@ -41,7 +41,7 @@ output:
 
 - However, being a practical workshop we do
 
-    - work with a specific set of tools (R, markdown, pandoc, git) which
+    - work with a specific set of tools (markdown, R, RStudio, git) which
     - enables us *in this workshop* to  make a paper reproducable and open
     
 ## Related work 
@@ -97,6 +97,11 @@ output:
 Lao-tzu
 
 # Reproducability
+
+## In general
+
+> In science consensus is irrelevant. What is relevant is reproducible results. The greatest scientists in history are great precisely because they broke with the consensus (Michael Crichton)
+
 
 ## In computation science:
 
@@ -163,7 +168,7 @@ This all under a full fledged versioning control system
 - Statistical software (pure command line driven): Python and R 
 
 - Environments
-    - [R](http://www.rproject.org/) and [Rstudio](http://www.rstudio.com) environment
+    - [R](http://www.rproject.org/) and [RStudio](http://www.rstudio.com) environment
     - Python and [iPython notebook](http://ipython.org/notebook.html) environment
     - Python and [Sumatra](http://neuralensemble.org/sumatra)
     - Emacs [org mode](http://orgmode.org/) 
@@ -190,7 +195,7 @@ Amsterdam paper example using ipython notebook:
 
 ## What we use in this workshop
 
-1. R and RStudio (with the `knitr` package)
+1. R and RStudio (with Yihui Xie's  `knitr` package)
 2. Markdown language
 3. Bibdesk/Mendeley
 4. Git and Github
@@ -200,28 +205,37 @@ Only implicitly we make use of LaTeX, BibTex, HTML and pandoc (all under the hoo
 
 ## Schedule Day 1 - Friday Sept. 5th
 
-- [9am--12am] Introduction
-    - Concepts behind open workflows
-    - Overview of tools
-    - Install session
+- **[9am-12am]** Introduction
+    * Concepts behind open workflows/Overview of tools
+    * Install session
 
-- Lunch
+[Lunch]
 
-- [1pm--3pm] Version control and task automation
-    - git and make
+- **[1pm-3pm]** Version control and task automation
+    * Terminal/git/make
 
-- [3:30pm--5:30pm] Typesetting
-    - Markdown, LaTeX and BibTex
-    - pandoc
-    
-- Diner 
+[Break]
+
+- **[3:30pm-5:30pm]** Typesetting
+    * Markdown/LaTeX/bibtex/pandoc/RStudion
+
+[Diner]
+
+- Location and time: To be announced
 
 ## Schedule Day 2 - Saturday Sept. 6th.
 
-- [9am--12am] Data analysis
-    - R and RStudio
-    
-- [12am--1pm] Online publishing
+- **[9am-11am]** Data analysis
+    * R
+
+[break]
+
+- **[11:30am-1pm]** Publishing
+    - Slides
+    - Publishing on GitHub
+    - Other publication channels
+
+[Lunch]
 
 ## Loose ends...
 

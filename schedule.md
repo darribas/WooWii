@@ -33,7 +33,6 @@ Tel: +31 (0)20 5986092
     * Terminal
     * git
     * make
-    * RStudio
 
 [Break]
 
@@ -41,6 +40,7 @@ Tel: +31 (0)20 5986092
     * Markdown and LaTeX
     * Bibtex
     * pandoc
+    * RStudio
 
 [Diner]
 
