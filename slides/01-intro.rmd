@@ -3,15 +3,15 @@ title: "Introduction"
 author: "Daniel Arribas-Bel & Thomas de Graaff"
 date: "September 5, 2014"
 output:
-  beamer_presentation:
-    slide_level: 2
-  ioslides_presentation: default
   revealjs_presentation:
     mathjax: default
     pandoc_args:
-    - --slide-level
-    - '2'
+    - --css
+    - fig/journal.css
     transition: linear
+  ioslides_presentation: default
+  beamer_presentation:
+    slide_level: 2
 ---
 
 # Introduction
@@ -63,7 +63,7 @@ output:
 
 ## Research cycle
 
-![Research cycle](fig/ResearchCycle.pdf)
+![Research cycle](fig/ResearchCycle.png)
 
 ## Why bother about a workflow or tools?
 
@@ -203,6 +203,8 @@ Amsterdam paper example using ipython notebook:
 
 Only implicitly we make use of LaTeX, BibTex, HTML and pandoc (all under the hood of RStudio)
 
+# Schedule
+
 ## Schedule Day 1 - Friday Sept. 5th
 
 - **[9am-12am]** Introduction
@@ -236,6 +238,8 @@ Only implicitly we make use of LaTeX, BibTex, HTML and pandoc (all under the hoo
     - Other publication channels
 
 [Lunch]
+
+# In conclusion
 
 ## Loose ends...
 
