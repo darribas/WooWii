@@ -3,14 +3,14 @@ title: "Markup languages and the terminal---Power at your fingertips"
 author: "Thomas de Graaff & Daniel Arribas-Bel"
 date: "September 5, 2014"
 output:
+  beamer_presentation:
+    slide_level: 2
   revealjs_presentation:
     mathjax: default
     pandoc_args:
     - --css
     - fig/journal.css
     transition: linear
-  beamer_presentation:
-    slide_level: 2
 ---
 
 # Introduction
@@ -99,6 +99,12 @@ e=mc^2
     + ``easily'' change it in html or pdf (via Latex)---even in Word if needed
     + can be extended with code or---much better---its results
 
+## Small diversion
+
+> Question 1: Why and when do we make use of pdf's and not html?
+
+> Question 2: Is one always better than the other?
+
 ## Language syntax 
 
 Emphasis:
@@ -166,7 +172,7 @@ print s
 
 ## Language syntax (cont.)
 
-To embed mathematics just use Latex  notation:
+To embed mathematics 'just' use [Latex notation](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf):
 
 ```Latex
 $$e=mc^2$$
