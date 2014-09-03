@@ -12,8 +12,8 @@ Concepts we review:
 
 ### Slides
 
-* [html](../slides/online_pub.html)
-* [pdf](../slides/online_pub.pdf)
+* [html](../slides/05-online_pub.html)
+* [pdf](../slides/05-online_pub.pdf)
 
 ### References
 
