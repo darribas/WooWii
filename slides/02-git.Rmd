@@ -72,7 +72,7 @@ Not today (but you should check it out):
 
 Assuming you have `git` installed:
 
-```shell
+```
 $ git config --global user.name "Your Name"
 $ git config --global user.email "your@email.org"
 ```
@@ -83,13 +83,13 @@ service
 Additionally, you may want to set up a default editor (make sure you actually
 have it installed):
 
-```shell
+```
 git config --global core.editor "vim" 
 ```
 
 Additional trick:
 
-```shell
+```
 $ git config --global --add color.ui true
 ```
 
@@ -98,7 +98,7 @@ $ git config --global --add color.ui true
 Navigate to the folder where you want to create the new project and create the
 directory, naming it the way you prefer:
 
-```shell
+```
 $ cd /path/to/folder
 $ mkdir my_new_folder
 $ cd my_new_folder
@@ -106,7 +106,7 @@ $ cd my_new_folder
 
 Then start tracking:
 
-```shell
+```
 $ git init
 ```
 
@@ -115,7 +115,7 @@ history (although you will never access it directly).
 
 A very common command you will use repeatedly is `status`:
 
-```shell
+```
 $ git status
 
 # On branch master
