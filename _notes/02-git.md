@@ -13,8 +13,8 @@ The two tools with which we will play to explore these ideas practically are
 
 ### Slides
 
-* [html](../slides/04-git.html)
-* [pdf](../slides/04-git.pdf)
+* [html](../slides/02-git.html)
+* [pdf](../slides/02-git.pdf)
 
 ### References
 

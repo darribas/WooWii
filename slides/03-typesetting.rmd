@@ -5,6 +5,12 @@ date: "September 5, 2014"
 output:
   beamer_presentation:
     slide_level: 2
+  revealjs_presentation:
+    mathjax: default
+    pandoc_args:
+    - --css
+    - fig/journal.css
+    transition: linear
 ---
 
 # Introduction
@@ -32,22 +38,33 @@ This entails:
     - code is almost **always** in text format
     - **usually** data is in text format as well
     - but underlying format for output (presentation, website, tables, articles, books) **can** be text as well
+    
+## Manipulation of text
 
-# Latex and friends
+- Most output is based on simple text file; applications only change appearance, such as:
+    - browsers
+    - pdf
+    
+- **How** to change appearance require markup-languages
+    - `HTML`
+    - `LaTeX`
+    - `Markdown`
 
-## Latex
+# `Latex` and friends
+
+## `LaTeX`
 
 1. What?
-    + A set of macros around Tex, a markup language invented by Donald Knuth  
+    + A set of macros around `Tex`, a markup language invented by Donald Knuth  
 2. How?
     + Latex is a document preparation system and document markup language. [Source: Wikipedia](http://en.wikipedia.org/wiki/LaTeX) 
 3. Why?
     + Defacto standard in academic publishing
-    + Formulae used in html pages (e.g., Wikipedia)
+    + Formulae used in `HTML` pages (e.g., Wikipedia)
     + Macro's thus scriptable (whoohoo)
 4. But...
     + Notation a bit cumbersome
-    + For small texts a bit too much and not geared for HTML [(see also)](http://yihui.name/en/2013/10/markdown-or-latex/)
+    + For small texts a bit too much and not geared for `HTML` [(see also)](http://yihui.name/en/2013/10/markdown-or-latex/)
 
 ## A minimal example
 
@@ -73,13 +90,20 @@ e=mc^2
 ## Why markdown?
 
 1. Easy to learn [http://daringfireball.net/projects/markdown/](http://daringfireball.net/projects/markdown/)
-2. Much less notation than Latex . In general
-    + Latex is for paper (aka dead trees)
-    + Markdown is for HTML (blogs, wikipedia and so)
+2. Much less notation than Latex . Originally, 
+    + `LaTeX` is for paper (aka dead trees)
+    + `Markdown` is for `HTML` (blogs, wikipedia and so)
     + but sneakily uses some Latex when needed
 3. Focus on text
-4. Can be ``easily'' changed in html or pdf (via Latex)---even in Word if needed
-5. Can be extended with code or---much better---its results
+4. Nowadays:
+    + ``easily'' change it in html or pdf (via Latex)---even in Word if needed
+    + can be extended with code or---much better---its results
+
+## Small diversion
+
+> Question 1: Why and when do we make use of pdf's and not html?
+
+> Question 2: Is one always better than the other?
 
 ## Language syntax 
 
@@ -148,7 +172,7 @@ print s
 
 ## Language syntax (cont.)
 
-To embed mathematics just use Latex  notation:
+To embed mathematics 'just' use [Latex notation](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf):
 
 ```Latex
 $$e=mc^2$$
@@ -158,11 +182,30 @@ which surprisingly looks as excel type of formulae and renders as:
 
 $$e=mc^2$$
 
+## Language syntax (cont.)
+
+Inline equations just require `$ $`, e.g.: 
+
+```Latex
+In economics it is well kwown that: 
+$\frac{d x}{d y} = -\frac{
+\partial u(x,y)/ \partial y} {
+\partial u(x,y)/ \partial x}$.
+```
+
+which renders as
+
+In economics it is well kwown that: $\frac{d x}{d y} = -\frac{
+\partial u(x,y)/
+\partial y} {
+\partial u(x,y)/
+\partial x}$.
+
 # Pandoc
 
 ## The swiss knife of formats
 
-So how do we glue everything together and produce wonderful html and pdf out of thin air? With **[pandoc](http://johnmacfarlane.net/pandoc/)**
+So how do we glue everything together and produce wonderful htmls and pdfs out of thin air? With **[pandoc](http://johnmacfarlane.net/pandoc/)**
 
 + Pandoc can convert from (not extensive):
     + markdown (whoohoo), Latex, HTML, DocBook, Org-mode, and ... Words docx 
@@ -172,6 +215,9 @@ So how do we glue everything together and produce wonderful html and pdf out of 
     + Word (but support somewhat limited) and OpenOffice formats
     + various markup formats
     + and much more
+
+## So, a typical workflow in `R` 
+![Workflow](fig/Workflow.png)
 
 # The terminal
 
