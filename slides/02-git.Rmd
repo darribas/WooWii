@@ -4,17 +4,19 @@ subtitle: "[`git` & `make`]"
 author: "Dani Arribas-Bel & Thomas De Graaff"
 date: "September 5, 2014"
 output:
-  revealjs_presentation:
-    mathjax: "default"
-    transition: "linear"
-    pandoc_args: [
-      "--css", "fig/journal.css",
-    ]
   beamer_presentation:
-    slide_level: 1
+    slide_level: 2
+  revealjs_presentation:
+    mathjax: default
+    pandoc_args:
+    - --css
+    - fig/journal.css
+    transition: linear
 ---
 
-# Outline
+# Introduction
+
+## Outline
 
 Version control
 
@@ -28,13 +30,13 @@ Task automation
 * Why
 * How (`make`)
 
-# Version control - *What* (not)
+# Version control
+
+## Version control - *What* (not)
 
 !["Piled Higher and Deeper", by Jorge Cham. http://www.phdcomics.com](fig/phdcomic.png)
 
-# Version control
-
-## *What*
+## Version control *What*
 
 *The modern scientist's lab notebook*
 
@@ -44,7 +46,7 @@ Task automation
 * Tell differences with other versions (collaboration) and be able to merge
   them
 
-## *Why*
+## *Version control Why*
 
 * **Sanity**: nothing "committed" is lost
 * **Archival**: keep record on when what changed how
@@ -52,7 +54,7 @@ Task automation
 
 Very [neat video](http://flowingdata.com/2012/11/30/time-lapse-writing-of-a-research-paper/) exemplifying the concept
 
-# `git`
+## `git`
 
 Today:
 
@@ -68,7 +70,7 @@ Not today (but you should check it out):
 * [Collaboration](http://software-carpentry.org/v5/novice/git/02-collab.html) with `git`
 * [Conflicts](http://software-carpentry.org/v5/novice/git/03-conflict.html) in `git`
 
-# `git` - Requirements & Setup
+## `git` - Requirements & Setup
 
 Assuming you have `git` installed:
 
@@ -93,7 +95,7 @@ Additional trick:
 $ git config --global --add color.ui true
 ```
 
-# `git` - New project (repository)
+## `git` - New project (repository)
 
 Navigate to the folder where you want to create the new project and create the
 directory, naming it the way you prefer:
@@ -110,6 +112,8 @@ Then start tracking:
 $ git init
 ```
 
+## `git` - New project (repository) (cnt.)
+
 This will create a hidden folder called `.git`, which will story all the
 history (although you will never access it directly).
 
@@ -125,7 +129,7 @@ $ git status
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-# `git` - Work...
+## `git` - Work...
 
 Start, for example, with one text file. You can create it from the text editor
 of your preference, or you can create it using a command line editor, such as
@@ -140,6 +144,8 @@ And start working:
 ```shell
 The world is flat.
 ```
+
+## `git` - Work... (cnt.)
 
 Take a break. Save and quit the file. And now check the status of the `git`
 project:
@@ -158,7 +164,7 @@ $ git status
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-# `git` - ... and track your work!
+## `git` - ... and track your work!
 
 At this point, you want `nobelp_paper.txt` to be tracked as you work on it.
 This does *not* come automatically (like in Dropbox, for example), but you
@@ -169,6 +175,8 @@ $ git add nobelp_paper.txt
 ```
 
 Now `git` knows it has to keep an eye on the file:
+
+## `git` - ... and track your work! (cnt.)
 
 ```shell
 $ git status
@@ -193,11 +201,13 @@ $ git commit -m "Current state of knowledge about Earth"
 
 Everything is properly recorded at this point.
 
-# `git` - Why `add` and `commit`?
+## `git` - Why `add` and `commit`?
 
-![Local spaces](fig/git-staging-area.svg)
+![Local spaces](fig/git-staging-area.png)
 
-(Source: [Software Carpentry](http://software-carpentry.org/v5/novice/git/img/git-staging-area.svg))
+(Source: [Software Carpentry](http://software-carpentry.org/v5/novice/git/img/git-staging-area.png))
+
+## `git` - Why `add` and `commit`? (cnt.)
 
 ```shell
 $ git status
@@ -209,7 +219,7 @@ nothing to commit, working directory clean
 It means you could keep working, not add, and, when you commit, only the added
 version will be tracked. Very useful when a project has **many files**!
 
-# `git` - Work, track, work, track...
+## `git` - Work, track, work, track...
 
 ```shell
 $ vim nobelp_paper.txt
@@ -232,6 +242,8 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
+## `git` - Work, track, work, track... (cnt.)
+
 Since the file is under tracking already, you can `add` and `commit` in a
 single shot:
 
@@ -245,7 +257,7 @@ $ git commit -am "Correcting view about Earth"
 Repeat this process as many times as snapshots you want to record of your
 project.
 
-# `git` - Examine log
+## `git` - Examine log
 
 ```
 $ git log
@@ -262,6 +274,8 @@ Date:   Thu Aug 28 10:36:36 2014 -0500
 
     Current state of knowledge about Earth
 ```
+
+## `git` - Examine log (cnt.)
 
 Or a more compressed view...
 
@@ -283,7 +297,7 @@ a643fa0 - %a, 17 minutes ago : Correcting view about Earth
 
 See more details about tweaking `git log` in [this link](http://www.git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History).
 
-# `git` - Compare versions
+## `git` - Compare versions
 
 Current version from last one tracked (`HEAD`):
 
@@ -307,6 +321,8 @@ index 5a35641..3215244 100644
 +The world is NOT flat at all.
 ```
 
+## `git` - Compare versions (cnt.)
+
 You can go back in time n revisions (`HEAD~n`):
 
 ```
@@ -325,7 +341,7 @@ index 3fa4573..3215244 100644
 +The world is NOT flat at all.
 ```
 
-# `git` - Compare versions (ctd.)
+## `git` - Compare versions (ctd.)
 
 Or compare with a specific revision (check log for that):
 
@@ -341,6 +357,8 @@ index 3fa4573..3215244 100644
 +The world is NOT flat at all.
 ```
 
+## `git` - Compare versions (cnt.)
+
 Or compare two previous versions:
 
 ```
@@ -355,7 +373,7 @@ index 3fa4573..5a35641 100644
 +The world is NOT flat.
 ```
 
-# `git` - Restore older version
+## `git` - Restore older version
 
 Suppose we delete the file by accident:
 
@@ -374,6 +392,8 @@ Also works if you decide to go back to a previous version of the file:
 ```
 $ git checkout HEAD~2 nobelp_paper.txt
 ```
+
+## `git` - Restore older version (cnt.)
 
 These modifications act as if you had edited the file:
 
@@ -394,7 +414,7 @@ So if you want to save the project at that stage again, commit:
 $ git commit -am "Going back to original ideas"
 ```
 
-# `git` - Several files
+## `git` - Several files
 
 * `git` tracks "**snapshots**" of the project, rather than changes in particular
 files.
@@ -411,7 +431,7 @@ in time much easier and flexible.
 * Bring the project to a state where `nobelp_paper.txt` is in the initial
   version and the new file is at the latest.
 
-# Exercise (suggested) result
+## Exercise (suggested) result
 
 ```
 $ vim corollary.txt
@@ -437,7 +457,7 @@ I am not really sure about Earth's flatness, it depends.
 ```
 $ git commit -am "Introducing uncertainty to corollary"
 ```
-
+## Exercise (suggested) result (cnt.)
 ```
 $ git log --pretty=oneline nobelp_paper.txt
 
@@ -450,7 +470,7 @@ $ git checkout 6d119ff4a319650bfef06d279b000a56f5fe7759 nobelp_paper.txt
 $ git commit -am "Completing exercise"
 ```
 
-# `git` - Get selective on a project
+## `git` - Get selective on a project
 
 * A project might have several files (we've seen how to deal with that)
 * Some of those you might prefer to exclude (or not care to include)
@@ -463,6 +483,7 @@ $ vim .gitignore
 $ git add .gitignore
 $ git commit -m "Adding ignore file"
 ```
+## `git` - Get selective on a project (cnt.)
 
 ```
 *.aux
@@ -479,19 +500,15 @@ On branch master
 nothing to commit, working directory clean
 ```
 
------
-
-# Task automation - *What*
+## Task automation - *What*
 
 * Avoid manually repeating tasks
 * Scripting...
 
-# Task automation - *Why*
+## Task automation - *Why*
 
 * Lazier/more efficient
-* Less prone to errors
-
-# 
+* Less prone to errors 
 
 <p><a rel="license" href="http://www.fosteropenscience.eu/"><img
 alt="FOSTER" style="border-width:0"
