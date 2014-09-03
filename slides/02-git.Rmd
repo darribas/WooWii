@@ -131,20 +131,20 @@ Start, for example, with one text file. You can create it from the text editor
 of your preference, or you can create it using a command line editor, such as
 `vim`:
 
-```shell
+```
 $ vim nobelp_paper.txt
 ```
 
 And start working:
 
-```shell
+```
 The world is flat.
 ```
 
 Take a break. Save and quit the file. And now check the status of the `git`
 project:
 
-```shell
+```
 $ git status
 
 # On branch master
@@ -164,13 +164,13 @@ At this point, you want `nobelp_paper.txt` to be tracked as you work on it.
 This does *not* come automatically (like in Dropbox, for example), but you
 need to explicitly add the file:
 
-```shell
+```
 $ git add nobelp_paper.txt
 ```
 
 Now `git` knows it has to keep an eye on the file:
 
-```shell
+```
 $ git status
 
 # On branch master
@@ -187,7 +187,7 @@ $ git status
 To record the file at a given stage, you need to "commit" the changes. Include
 a (short) message describing the advancement:
 
-```shell
+```
 $ git commit -m "Current state of knowledge about Earth"
 ```
 
@@ -199,7 +199,7 @@ Everything is properly recorded at this point.
 
 (Source: [Software Carpentry](http://software-carpentry.org/v5/novice/git/img/git-staging-area.svg))
 
-```shell
+```
 $ git status
 
 # On branch master
@@ -211,15 +211,15 @@ version will be tracked. Very useful when a project has **many files**!
 
 # `git` - Work, track, work, track...
 
-```shell
+```
 $ vim nobelp_paper.txt
 ```
 
-```shell
+```
 The world is NOT flat.
 ```
 
-```shell
+```
 $ git status
 
 On branch master
@@ -287,11 +287,11 @@ See more details about tweaking `git log` in [this link](http://www.git-scm.com/
 
 Current version from last one tracked (`HEAD`):
 
-```shell
+```
 $ vim nobelp_paper.txt
 ```
 
-```shell
+```
 The world is NOT flat at all.
 ```
 
@@ -479,8 +479,6 @@ On branch master
 nothing to commit, working directory clean
 ```
 
------
-
 # Task automation
 
 # Task automation 
@@ -506,15 +504,84 @@ nothing to commit, working directory clean
 
 # `make`
 
+*The recipe builder*
+
 * Very old (stable) piece of free software
 * Still used today
 * Designed to make possible to compile complicated code projects
 * *Glue* of the Unix mantra: "do one thing, and do it very well".
 
-The idea is to understand a research project (e.g. paper) as a code project
-where, to obtain certain outcomes (e.g. final paper version), one needs to
+Understanding a research project (e.g. paper) as a code project: 
+to obtain certain outcomes (e.g. final paper version), one needs to
 complete a series of steps in a particular order (clean data, run regressions,
 write paper).
+
+Benefits:
+
+* Rewards more modular work
+* Forces you to make very explicit the chain of events that your project/paper
+  needs to be created
+* Allows to easily re-run as many times as neccesary (parts of) your paper
+  without any manual checks
+
+# The simplest intro to `make`
+
+Just as a "chainer" of files:
+
+```
+$ vim Makefile
+```
+
+```bash
+all:
+    write_my_diss
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+```
+
+Running `make` will execute all of the three processes.
+
+Suppose you want to have a handy shortcut for the first two only:
+
+```bash
+all:
+    write_my_diss
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+
+hardwork:
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+```
+
+Running `make` will still execute all of them, but running `make hardwork`
+will only run the first two.
+
+# The `make` model
+
+* **Targets**: output created from a process. 
+* **Sources**: programs/commands that produce a target
+
+For example:
+
+```bash
+dissertation.tex:write_my_diss
+    write_my_diss
+```
+
+You can chain steps and add more sources for a target:
+
+```bash
+dissertation.tex: write_my_diss
+    write_my_diss
+
+phd.txt: dissertation.tex a_little_luck.R
+    R CMD BATCH a_little_luck.R
+```
+
+If `phd.txt` does not exist, or `dissertation.tex` and/or
+`a_little_luck.R` have changed since last time it was produced, `make`
+will run the R process again, which should produce a new version of `phd.txt`
 
 # 
 
