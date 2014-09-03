@@ -20,7 +20,7 @@ Although the last one, pandoc, is not completely necessary (it is under the hood
 Markdown:
 
 * [Markdown](http://daringfireball.net/projects/markdown/): Background information
-* [Markdown versus Latex](http://yihui.name/en/2013/10/markdown-or-latex/): An interesting point view of Yihui Xie.
+* [Markdown versus Latex](http://yihui.name/en/2013/10/markdown-or-latex/): An interesting point of view by Yihui Xie.
 
 R and Markdown: 
 
