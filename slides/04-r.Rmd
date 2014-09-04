@@ -21,7 +21,7 @@ output:
 * Reproducible statistical analysis
 * Reinhart & Rogoff: a textbook example of the power of replication
 * `R`: what is it and why should I care?
-* R overview
+* `R` overview
     * Libraries and help
     * Reading data
     * Exploring the `data.frame`
@@ -157,7 +157,7 @@ Being Free Software ("the users have the freedom to run, copy, distribute, study
 
 ![IDE](fig/ride.png)
 
-# R overview
+# `R` overview
 
 ## Packages
 **Look for R info and packages**
@@ -175,6 +175,9 @@ Being Free Software ("the users have the freedom to run, copy, distribute, study
 * Command line with `instal.packages` function
 * Command `library` (e.d. `library(maptools)` to load the package `maptools`)
 
+## Help
+
+![xkcd](fig/xkcd.png)
 
 ## Help and documentation
 
@@ -202,16 +205,178 @@ Being Free Software ("the users have the freedom to run, copy, distribute, study
 
 ## Reading data
 
+Point to the folder
+
+```{r}
+setwd('~/code/WooWii/slides/')
+getwd()
+```
+
+Native `csv` reading
+
+```{r}
+nl <- read.csv("../Paper/Final/Data/RR - Netherlands.csv")
+```
+
+Foreign formats supported
+
+```{r}
+library(foreign)
+proc <- read.dta("../Paper/Final/Data/RR-processed.dta")
+```
+
+Many other formats supported (`dbf`, `xls`, `sql`-like databases...)
+
 ## Exploring a `data.frame`
 
-## Manipulating a `data.frame`
+`head`/`tail` for the top/bottom of the table
+
+```{r}
+head(nl)
+```
+
+```{r}
+nl[1, ]
+```
+
+## Exploring a `data.frame`
+
+```{r}
+max(nl$GDP1, na.rm=TRUE)
+```
+
+```{r}
+min(nl$Debt, na.rm=TRUE)
+```
+
+Create new variables
+
+```{r}
+nl['dtg'] = nl$Debt / nl$GDP1
+```
+
+## Exploring a `data.frame`
+
+`summary` for basic statistics
+
+```{r}
+summary(nl)
+```
+
+## Querying a `data.frame`
+
+A `data.frame` has fancy query features
+
+```{r}
+with_debt <- nl[!is.na(nl$Debt), ]
+head(with_debt, 3)
+```
+
+```{r}
+nl_clean <- nl[!is.na(nl$GDP1), ]
+mean_gdp <- mean(nl_clean$GDP1)
+high_gdp <- nl_clean[nl_clean$GDP1 > mean_gdp, ]
+head(high_gdp, 3)
+```
+
+You could use `>` for greater than, `<` for smaller than, or `==` for equal to
+
+## Querying a `data.frame`
+
+Which you can combine:
+
+```{r}
+super_clean <- nl[(!is.na(nl$GDP1)) & (!is.na(nl$Debt)), ]
+ratio <- super_clean$Debt / super_clean$GDP1
+good_years <- super_clean[(ratio < 0.9) & (super_clean$GDP1 > mean_gdp), ]
+head(good_years, 3)
+```
+
+## Hands on!
+
+In `proc`: 
+
+* In what country and year the GDP is largest?
+* Show a country in which the Debt/GDP ratio has never been beyond 90%
+
+## Answer
+
+* In what country and year the GDP is largest?
+
+```{r}
+clean_gdp <- proc[!is.na(proc$GDP), ]
+max_gdp <- max(clean_gdp$GDP)
+top_gdp <- clean_gdp[clean_gdp$GDP == max_gdp, ]
+top_gdp[, c('Country', 'Year', 'GDP')]
+```
+
+* Show a country in which the Debt/GDP ratio has never been beyond 90%
+
+```{r}
+proc['dtg'] <- 100 * proc$Debt / proc$GDP
+debt_to_gdp_clean <- proc[!is.na(proc$dtg), ]
+good_boys <- debt_to_gdp_clean[debt_to_gdp_clean$dtg < 0.9, ]
+good_boys[1:5, c('Country', 'Year', 'dtg')]
+```
+
+```{r}
+unique(good_boys$Country)
+```
 
 ## Analyze data: regression
 
+```{r}
+ols <- lm('log(Debt) ~ log(GDP)', data=proc)
+summary(ols)
+```
+
 ## Visualization
+
+```{r}
+plot(log(proc$GDP), log(proc$Debt))
+```
+
+Try also `plot(ols)` in RStudio!
+
+## Advanced manipulations
+
+Corrected Reinhart & Rogoff Table 1 (as shown by Herndon et al.)
+
+```{r}
+RR$dgcat.lm <- cut(RR$debtgdp, breaks=c(0,30,60,90,Inf))
+RR$dgcat <- factor(RR$dgcat.lm, labels = c("0-30%","30-60%","60-90%","Above 90%"),ordered=TRUE)
+(RR.correct.mean <- with(RR, tapply( dRGDP, dgcat, mean, na.rm=TRUE )))
+```
+
+Converted to a `data.frame`
+
+```{r}
+table_df <- data.frame(RR.correct.mean, dgcat=names(RR.correct.mean) )
+table_df
+```
 
 ## Export results
 
-# More
+Simply write to a `csv`
 
-## Additional resources
+```{r}
+write.csv(table_df, '~/Desktop/table.csv')
+```
+
+Or to LaTeX
+
+```{r}
+library(xtable)
+xtable(table_df)
+```
+
+## Export results
+
+If we wanted to write it out to a file
+
+```{r results='hide'}
+sink('~/Desktop/table.tex')
+xtable(table_df)
+sink()
+```
+
