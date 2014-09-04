@@ -47,12 +47,45 @@ output:
     
 ## Final part of this workshop
 
-1. Creating presentations
+1. Combining code and text
 
-2. Online publishing
+2. Creating presentations
 
-3. Bring it all together as a nice website
-        
+3. Online publishing
+
+4. Bring it all together 
+
+# Knit it all together
+
+## Combining code and text
+
+- `RStudio` uses the package `knitr`
+
+- Actually knitting in chunks of code within text. 
+
+- example 
+
+> Discussion: code within text or as separate files?
+
+## Knitr options:
+
+- Typically: 
+
+```r
+{```}{r, echo=FALSE, results='hide', 
+		warning=TRUE, warning=TRUE, message=TRUE}
+rnorm(10)
+{```}
+```
+
+- Or:
+
+```r
+{```}{r, echo=FALSE}
+source("./file.R")
+{```}
+```
+
 # Presentations
 
 ## Slides
@@ -129,4 +162,17 @@ output:
     - create a package from your paper (and publish on [CRAN](http://cran.r-project.org/))
     - iPython notebook viewer
 
-# Conclusionary remarks
+# Assignment
+
+## Assignment 5
+
+- go to ```/WooWii/Paper/Assignment5/```
+
+- Incorporate source files using `knitr`
+
+- publish on your own github repository
+
+- if time permits and with OsX, create a makefile structure to create with one command
+	- `pdf` output
+	- `doc` output
+	- `html` output
