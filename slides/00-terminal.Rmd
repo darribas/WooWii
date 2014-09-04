@@ -1,0 +1,43 @@
+---
+title: "The terminal app"
+author: "Dani Arribas-Bel & Thomas De Graaff"
+date: "September 5, 2014"
+output:
+  revealjs_presentation:
+    mathjax: "default"
+    transition: "linear"
+    pandoc_args: [
+      "--css", "fig/journal.css",
+    ]
+  beamer_presentation:
+    slide_level: 2
+---
+
+# Terminal
+
+## Why?
+
+* Automation/scriptable
+* "Deployment" to larger computers
+* Access to command line tools
+
+## Basics
+
+* Navigating
+
+```bash
+cd my/folder/
+```
+
+```bash
+ls
+```
+
+```bash
+pwd
+```
+
+* Paths
+* `touch`
+* Tab-completion
+

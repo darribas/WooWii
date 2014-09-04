@@ -176,13 +176,9 @@ $ git add nobelp_paper.txt
 
 Now `git` knows it has to keep an eye on the file:
 
-<<<<<<< HEAD
 ## `git` - ... and track your work! (cnt.)
 
-```shell
-=======
 ```
->>>>>>> FETCH_HEAD
 $ git status
 
 # On branch master
@@ -504,9 +500,6 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-<<<<<<< HEAD
-## Task automation - *What*
-=======
 # Task automation
 
 # Task automation 
@@ -531,16 +524,9 @@ nothing to commit, working directory clean
 * **Big picture design**: Forces to always keep in mind the overall structure of the project 
 
 # `make`
->>>>>>> FETCH_HEAD
 
 *The recipe builder*
 
-<<<<<<< HEAD
-## Task automation - *Why*
-
-* Lazier/more efficient
-* Less prone to errors 
-=======
 * Very old (stable) piece of free software
 * Still used today
 * Designed to make possible to compile complicated code projects
@@ -619,7 +605,6 @@ If `phd.txt` does not exist, or `dissertation.tex` and/or
 will run the R process again, which should produce a new version of `phd.txt`
 
 # 
->>>>>>> FETCH_HEAD
 
 ![FOSTER](fig/fosterlogo.png)
 
