@@ -57,11 +57,31 @@ In this session we will focus on the last two: **code** and **platform**
 
 ## Reinhart & Rogoff
 
-* In 2010, C. Reinhart and K. Rogoff put together a paper papers\*
+* In 2010, C. Reinhart and K. Rogoff put together a paper claiming to show
+  how economic growth is seriously dampened once the ratio of debt to GDP goes
+  above 90%
+* The paper was very influential and became one of the most commonly cited
+  ones to argue for austerity measures
+* In 2013, **Thomas Herndon**, a PhD student at UMass, tried
+  to replicate the results for a class assignment
+* He could not, so finally he obtained from Reinhart the original (Excel) code
+  and data only to find **results diverged** because of:
+    * Selective exclusion of available data
+    * Unconventional weighting of summary statistics
+    * Coding errors
+* The **replication** is posted [online](http://www.peri.umass.edu/236/hash/31e2ff374b6377b2ddec04deaa6388b1/publication/566/), together with the data and R code used for
+  the paper
 
-\* -Reinhart, C. M. and Rogoff, K. S. (2010a). Growth in a Time of Debt. American Economic Review: Papers & Proceedings, 100.
+## Reinhart & Rogoff
 
- -Reinhart, C. M. and Rogoff, K. S. (2010b). Growth in a Time of Debt. Working Paper 15639, National Bureau of Economic Research, http://www.nber.org/papers/w15639.
+Lessons:
+
+* **No one is free from mistakes** (even Harvard top economists!)
+* **Posting your data and code** but, if you don't, sharing them honestly upon
+  request is a good second best
+* **Replication** should be much more widespread
+* ... you should not underestimate PhD students without a big name but with lots
+  of time!
 
 # `R`
 ## `R`: what is it?
