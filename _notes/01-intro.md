@@ -20,6 +20,7 @@ You will need to have them installed on your machine to follow along in your lap
 
 * [html](../slides/01-intro.html)
 * [pdf](../slides/01-intro.pdf)
+* Additional notes on the terminal app ([html](../slides/00-terminal.html))
 
 ### References
 
