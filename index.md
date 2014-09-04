@@ -13,9 +13,6 @@ layout: default
 
 The workshop is kindly supported by the EU [FOSTER](http://www.fosteropenscience.eu/) project.
 
-<p><a rel="license" href="http://www.fosteropenscience.eu/"><img
-alt="FOSTER" style="border-width:0"
-src="http://www.fosteropenscience.eu/wp-content/uploads/2014/02/cropped-FOSTER_logo_final_128.png" /></a><br />
-</a></p>
 
+![FOSTER](slides/fig/fosterlogo.png)
 
