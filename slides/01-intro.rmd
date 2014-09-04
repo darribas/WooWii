@@ -3,6 +3,8 @@ title: "Introduction"
 author: "Daniel Arribas-Bel & Thomas de Graaff"
 date: "September 5, 2014"
 output:
+  beamer_presentation:
+    slide_level: 2
   revealjs_presentation:
     mathjax: default
     pandoc_args:
@@ -10,8 +12,6 @@ output:
     - fig/journal.css
     transition: linear
   ioslides_presentation: default
-  beamer_presentation:
-    slide_level: 2
 ---
 
 # Introduction
@@ -43,6 +43,16 @@ output:
 
     - work with a specific set of tools (markdown, R, RStudio, git) which
     - enables us *in this workshop* to  make a paper reproducable and open
+    
+## How we do it
+
+- Every session start with some introductionary slides 
+
+- Then some assignment is given
+    - use with some tool
+    - try to figure it out for yourself
+    
+- Usually directed to making [this paper](http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf) reproducable
     
 ## Related work 
 

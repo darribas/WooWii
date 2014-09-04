@@ -13,7 +13,7 @@ Concepts we review:
 ### Slides
 
 * [html](../slides/05-online_pub.html)
-* [pdf](../slides/05-online_pub.pdf)
+* [pdf](../slides/05o-nline_pub.pdf)
 
 ### References
 

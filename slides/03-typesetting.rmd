@@ -1,16 +1,17 @@
 ---
-title: "Markup languages and the terminal---Power at your fingertips" 
+title: "Markup languages and the terminal---Power at your fingertips"
 author: "Thomas de Graaff & Daniel Arribas-Bel"
 date: "September 5, 2014"
 output:
-  beamer_presentation:
-    slide_level: 2
   revealjs_presentation:
     mathjax: default
     pandoc_args:
     - --css
     - fig/journal.css
     transition: linear
+  ioslides_presentation: default
+  beamer_presentation:
+    slide_level: 2
 ---
 
 # Introduction
@@ -91,13 +92,13 @@ e=mc^2
 
 1. Easy to learn [http://daringfireball.net/projects/markdown/](http://daringfireball.net/projects/markdown/)
 2. Much less notation than Latex . Originally, 
-    + `LaTeX` is for paper (aka dead trees)
-    + `Markdown` is for `HTML` (blogs, wikipedia and so)
-    + but sneakily uses some Latex when needed
++ `LaTeX` is for paper (aka dead trees)
++ `Markdown` is for `HTML` (blogs, wikipedia and so)
++ but sneakily uses some Latex when needed
 3. Focus on text
 4. Nowadays:
-    + ``easily'' change it in html or pdf (via Latex)---even in Word if needed
-    + can be extended with code or---much better---its results
+  + ``easily'' change it in html or pdf (via Latex)---even in Word if needed
++ can be extended with code or---much better---its results
 
 ## Small diversion
 
@@ -126,8 +127,8 @@ Unordened lists
 ```markdown
 * Item 1
 * Item 2
-    + Item 2a
-    + Item 2b
++ Item 2a
++ Item 2b
 ```
 
 Ordered List
@@ -135,8 +136,8 @@ Ordered List
 1. Item 1
 2. Item 2
 3. Item 3
-    + Item 3a
-    + Item 3b
++ Item 3a
++ Item 3b
 ```
 
 ## Language syntax (cont.)
@@ -157,10 +158,10 @@ Images:
 Code blocks:
 
 ```markdown
-  ```python
-    s = "Python syntax highlighting"
-    print s
-  ```
+```python
+s = "Python syntax highlighting"
+print s
+```
 ```
 
 which renders as:
@@ -208,25 +209,30 @@ In economics it is well kwown that: $\frac{d x}{d y} = -\frac{
 So how do we glue everything together and produce wonderful htmls and pdfs out of thin air? With **[pandoc](http://johnmacfarlane.net/pandoc/)**
 
 + Pandoc can convert from (not extensive):
-    + markdown (whoohoo), Latex, HTML, DocBook, Org-mode, and ... Words docx 
++ markdown (whoohoo), Latex, HTML, DocBook, Org-mode, and ... Words docx 
 + To (and here we go...)
-    + HTML formats (including those very cool and nerdy HTML(5) slides)
-    + via Latex to pdf
-    + Word (but support somewhat limited) and OpenOffice formats
-    + various markup formats
-    + and much more
++ HTML formats (including those very cool and nerdy HTML(5) slides)
++ via Latex to pdf
++ Word (but support somewhat limited) and OpenOffice formats
++ various markup formats
++ and much more
 
 ## So, a typical workflow in `R` 
 ![Workflow](fig/Workflow.png)
 
-# The terminal
+# The Assignment
 
-## The terminal
 
-+ What?
-    + Unix kind of application that is completely working without GUI's and governing all processes...(btw, powershell for Windows works now really well as well)
-+ Do we really need it?
-    + not really, but it makes you faster, more versatile, nerdier, and you have to know what you are doing. 
-    + and there are some applications that only work in the terminal (such as make and pandoc) 
-+ So, why is it so cool again?
-    + you can make everything **scriptable**
+## The assignment
+
+- if not already done do: 
+  - ```git clone https://github.com/darribas/WooWii```
+
+- go to ```/WooWii/Paper/Assignment3/```
+
+- and transform `RepPaper.txt` *as much as possible* in `RStudio`
+- headers
+- title + author
+- reference (at least one is missing)
+- footnotes
+- table
