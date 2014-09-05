@@ -44,8 +44,9 @@ Tel: +31 (0)20 5986092
 
 [Diner]
 
-- Location and time: To be announced
-
+- 7:30 [Cafe Louter](http://www.cafelouter.nl/)
+	- [map](https://www.google.com/maps/preview?ie=UTF-8&fb=1&sll=52.370715,4.868605&sspn=0.0201233,0.0439461&cid=152751536884672244&q=Louter&ei=V5IJVMO4MYmmO9SxgagB&ved=0CH0Q_BIwDQ&source=newuser-ws)
+	
 ### Day 2 - Saturday Sept. 6th.
 
 - **[9am-11am]** Data analysis
