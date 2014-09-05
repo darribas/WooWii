@@ -207,8 +207,8 @@ Being Free Software ("the users have the freedom to run, copy, distribute, study
 
 Point to the folder
 
-```{r}
-setwd('~/code/WooWii/slides/')
+```{r run=FALSE}
+#setwd('~/code/WooWii/slides/')
 getwd()
 ```
 
@@ -343,9 +343,10 @@ Try also `plot(ols)` in RStudio!
 Corrected Reinhart & Rogoff Table 1 (as shown by Herndon et al.)
 
 ```{r}
-RR$dgcat.lm <- cut(RR$debtgdp, breaks=c(0,30,60,90,Inf))
-RR$dgcat <- factor(RR$dgcat.lm, labels = c("0-30%","30-60%","60-90%","Above 90%"),ordered=TRUE)
-(RR.correct.mean <- with(RR, tapply( dRGDP, dgcat, mean, na.rm=TRUE )))
+library(xtable)
+proc$dgcat.lm <- cut(proc$debtgdp, breaks=c(0,30,60,90,Inf))
+proc$dgcat <- factor(proc$dgcat.lm, labels = c("0-30%","30-60%","60-90%","Above 90%"),ordered=TRUE)
+(RR.correct.mean <- with(proc, tapply( dRGDP, dgcat, mean, na.rm=TRUE )))
 ```
 
 Converted to a `data.frame`
@@ -379,3 +380,14 @@ sink('~/Desktop/table.tex')
 xtable(table_df)
 sink()
 ```
+
+##
+
+![FOSTER](fig/fosterlogo.png)
+
+Content by [Dani Arribas-Bel](http://darribas.org) and [Thomas De Graaff](http://www.thomasdegraaff.net/),
+licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+For this session, we have borrowed important amounts of inspiration and material from **Software Carpentry**'s [session on git](http://software-carpentry.org/v5/novice/git/index.html) and the freely available book [Pro Git](http://www.git-scm.com/book/)
+
+
