@@ -201,9 +201,16 @@ Being Free Software ("the users have the freedom to run, copy, distribute, study
                                 RSiteSearch website (requires connectivity)
 ---------------------------------------------------------------------------
 
+* R Task views
 * [StackOverflow](http://stackoverflow.com/questions/tagged/r)
 
 ## Reading data
+
+Clean up working space
+
+```{r}
+rm(list = ls())
+```
 
 Point to the folder
 
@@ -215,14 +222,14 @@ getwd()
 Native `csv` reading
 
 ```{r}
-nl <- read.csv("../Paper/Final/Data/RR - Netherlands.csv")
+nl <- read.csv("../data/RR - Netherlands.csv")
 ```
 
 Foreign formats supported
 
 ```{r}
 library(foreign)
-proc <- read.dta("../Paper/Final/Data/RR-processed.dta")
+proc <- read.dta("../data/RR-processed.dta")
 ```
 
 Many other formats supported (`dbf`, `xls`, `sql`-like databases...)
@@ -296,12 +303,12 @@ head(good_years, 3)
 
 In `proc`: 
 
-* In what country and year the GDP is largest?
-* Show a country in which the Debt/GDP ratio has never been beyond 90%
+* In what country and year the `GDP` is largest?
+* Show a country in which the `Debt1` to `GDP1` ratio has ever been between 20% and 40%
 
-## Answer
+## Answer I
 
-* In what country and year the GDP is largest?
+* In what country and year the `GDP` is largest?
 
 ```{r}
 clean_gdp <- proc[!is.na(proc$GDP), ]
@@ -310,17 +317,20 @@ top_gdp <- clean_gdp[clean_gdp$GDP == max_gdp, ]
 top_gdp[, c('Country', 'Year', 'GDP')]
 ```
 
-* Show a country in which the Debt/GDP ratio has never been beyond 90%
+## Answer II
+
+* Show a country in which the `Debt1` to `GDP1` ratio has ever been between 20% and 40%
 
 ```{r}
-proc['dtg'] <- 100 * proc$Debt / proc$GDP
+proc['dtg'] <- 100 * proc$Debt1 / proc$GDP1
 debt_to_gdp_clean <- proc[!is.na(proc$dtg), ]
-good_boys <- debt_to_gdp_clean[debt_to_gdp_clean$dtg < 0.9, ]
-good_boys[1:5, c('Country', 'Year', 'dtg')]
+answer <- debt_to_gdp_clean[(debt_to_gdp_clean$dtg > 20) &
+                            (debt_to_gdp_clean$dtg < 40), ]
+answer[1:5, c('Country', 'Year', 'dtg')]
 ```
 
 ```{r}
-unique(good_boys$Country)
+unique(answer$Country)
 ```
 
 ## Analyze data: regression
@@ -360,7 +370,7 @@ table_df
 
 Simply write to a `csv`
 
-```{r}
+```{r, eval=F}
 write.csv(table_df, '~/Desktop/table.csv')
 ```
 
@@ -375,7 +385,7 @@ xtable(table_df)
 
 If we wanted to write it out to a file
 
-```{r results='hide'}
+```{r, eval=F}
 sink('~/Desktop/table.tex')
 xtable(table_df)
 sink()
