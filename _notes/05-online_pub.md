@@ -14,7 +14,7 @@ Concepts we review:
 
 For this session, we basically need five tools: `R`, `RStudio`, the `git` and `github` packages and `LaTeX`. Head over to the [Requirements](../requirements.html) page to see how to install them if you haven't yet. 
 
-For the assignment we will finalise replicating [this paper](../Assignments/OriginalPaper.pdf). The document for the assignment is [here](../Assignments/Assignment5/RepPaper.RMD) and the file with references is [here](../Assignments/Assignment5/bibliography.bib). The data can be found in this the `Assignments/Assignment5/Data/` folder and the `R` scripts needed to create the figures in the `Assignments/Assignment5/src/` folder to be downloaded from the [download](../Download) page.
+For the assignment we will finalise replicating [this paper](../Assignments/OriginalPaper.pdf). The document for the assignment is [here](../Assignments/Assignment5/RepPaper.RMD) and the file with references is [here](../Assignments/Assignment5/bibliography.bib). The data can be found in this the `Assignments/Assignment5/Data/` folder and the `R` scripts needed to create the figures in the `Assignments/Assignment5/src/` folder to be downloaded from the [download](../download/) page.
 
 The final document should look like [this](../Assignments/Final/RepPaper.pdf) and the whole paper including make file can be downloaded from the [download](../Download) page.
 
