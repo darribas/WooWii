@@ -15,7 +15,7 @@ Although the last one, pandoc, is not completely necessary (it is under the hood
 
 For this session, we basically need three tools: `R`, `RStudio`, and `LaTeX`. Head over to the [Requirements](../requirements.html) page to see how to install them if you haven't yet. 
 
-For the assignment we will replicate [this paper](../Assignments/OriginalPaper.pdf). The basic document for the assignment is [here](../Assignments/Assignment3/RepPaper.pdf) and the file with references is [here](../Assignments/Assignment3/blibliography.bib)
+For the assignment we will replicate [this paper](../Assignments/OriginalPaper.pdf). The basic document for the assignment is [here](../Assignments/Assignment3/RepPaper.txt) and the file with references is [here](../Assignments/Assignment3/bibliography.bib)
 
 ### Outcomes
 
