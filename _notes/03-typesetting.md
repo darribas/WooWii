@@ -54,7 +54,6 @@ Markdown:
 `R`, `RStudio`, `knitr` and `RMarkdown`:
 
 * [`R`and `Rstudio`](http://www.rstudio.com/resources/training/online-learning/):  Online learning of the basic r studio commands
-* [`knitr`](http://yihui.name/knitr/): `knitr` page with small introduction video
 * [RMarkdown Cheatsheet](http://blog.rstudio.org/2014/08/01/the-r-markdown-cheat-sheet/): Can come in handy
 
 Pandoc: 
