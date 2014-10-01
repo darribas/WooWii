@@ -1,5 +1,6 @@
 ---
-title: Typesetting
+title: "Typesetting"
+output: html_document
 ---
 
 In this 2h. session we introduce the concept of markup languages in combination with pandoc and working with the terminal. In particular we focus on markdown: a very lightweight and markup language (and probably the fastest way to create slides). In particular we deal with:
@@ -22,11 +23,13 @@ Markdown:
 * [Markdown](http://daringfireball.net/projects/markdown/): Background information
 * [Markdown versus Latex](http://yihui.name/en/2013/10/markdown-or-latex/): An interesting point of view by Yihui Xie.
 
-R and Markdown: 
+`R`, `RStudio`, `knitr` and `RMarkdown`:
 
+* [`R`and `Rstudio`](http://www.rstudio.com/resources/training/online-learning/):  Online learning of the basic r studio commands
+* [`knitr`](http://yihui.name/knitr/): `knitr` page with small introduction video
 * [RMarkdown Cheatsheet](http://blog.rstudio.org/2014/08/01/the-r-markdown-cheat-sheet/): Can come in handy
 
 Pandoc: 
 
-* [Pandoc](http://johnmacfarlane.net/pandoc/): This guy really deserves some credit; if only for conversion to Word (there is always those coauthors who....)
+* [Pandoc](http://johnmacfarlane.net/pandoc/): John Macfarlane really deserves some credit; if only for conversion to Word (there is always those coauthors who....)
 

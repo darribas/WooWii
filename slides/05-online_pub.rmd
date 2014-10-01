@@ -3,15 +3,16 @@ title: "Online publishing"
 author: "Thomas de Graaff & Daniel Arribas-Bel"
 date: "September 6, 2014"
 output:
-  ioslides_presentation: default
-  beamer_presentation:
-    slide_level: 2
   revealjs_presentation:
     mathjax: default
     pandoc_args:
     - --css
     - fig/journal.css
     transition: linear
+  beamer_presentation:
+    slide_level: 2
+  ioslides_presentation: default
+
 ---
 
 # Introduction
