@@ -11,12 +11,40 @@ In this 2h. session we introduce the concept of markup languages in combination 
 
 Although the last one, pandoc, is not completely necessary (it is under the hood of `RStudio`), we think it is important and handy enough to spend some on. 
 
+### Requirements
+
+For this session, we basically need three tools: `R`, `RStudio`, and `LaTeX`. 
+
+Head over to the [Requirements](../requirements.html) page to see how to install them if you haven't yet.
+
+### Outcomes
+
+After this session you should:
+
+* understand the basic command of the markdown language;
+* be able to write a (part of a) paper in markdown in RStudio including:
+	* headers;
+	* links;
+	* formula's;
+	* tables, and
+	* references;
+* be able to export this to:
+	* `HTML` export; 
+	* `pdf` export;
+	* Words' `docx` export.
+	 
+
 ### Slides
 
 * [html](../slides/03-typesetting.html)
 * [pdf](../slides/03-typesetting.pdf)
 
 ### References
+
+`Latex`: 
+
+* [`LaTeX` Tutorial](http://www.andy-roberts.net/writing/latex): A nice way to start with `LateX` for those who are interested
+* [`LaTex` Mathematics](http://en.wikibooks.org/wiki/LaTeX/Mathematics): How to write `LaTeX` formula's
 
 Markdown:
 
