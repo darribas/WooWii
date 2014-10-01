@@ -16,7 +16,7 @@ We are aware that using a particular data analysis tool is costly in terms of ti
 
 ### Requirements
 
-You will need several tools to be installed on your machine to follow along the workshop along with your laptop. Head over to the [Requirements](../requirements.html) page to see how to install them if you haven't yet.
+You will need several tools to be installed on your machine to follow the workshop along with your laptop. Head over to the [Requirements](../requirements.html) page to see how to install them if you haven't yet.
 
 ### Outcomes
 
