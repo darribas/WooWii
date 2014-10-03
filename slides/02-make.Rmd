@@ -1,0 +1,137 @@
+---
+title: "Automation"
+subtitle: "[`make`]"
+author: "Dani Arribas-Bel & Thomas De Graaff"
+date: "September 5, 2014"
+output:
+  beamer_presentation:
+    slide_level: 2
+  revealjs_presentation:
+    mathjax: default
+    pandoc_args:
+    - --css
+    - fig/journal.css
+    transition: linear
+---
+
+# Introduction
+
+## Outline
+
+Task automation
+
+* What
+* Why
+* How (`make`)
+
+# Task automation 
+
+*A button to push and reproduce*
+
+## *What*
+
+* It is important to keep things **modular**, **flexible** and **separate**, 
+  as long as it's possible
+* That also implies as a project grows larger and more complex, managing it
+  and keep it easily reproducible becomes harder and more involved
+* **Task automation** is based on the idea that some of the steps needed to
+  reproduce and output can be programmed (or scripted)
+* A sequence of all the steps and order, much like a cooking recipe, can be
+  encapsulated in a file that can be re-run
+
+## *Why*
+
+* **Efficiency**: avoid doing manually the same thing over and over
+* **Correctness**: less prone to errors
+* **Big picture design**: Forces to always keep in mind the overall structure of the project 
+
+# `make`
+
+*The recipe builder*
+
+* Very old (stable) piece of free software
+* Still used today
+* Designed to make possible to compile complicated code projects
+* *Glue* of the Unix mantra: "do one thing, and do it very well".
+
+Understanding a research project (e.g. paper) as a code project: 
+to obtain certain outcomes (e.g. final paper version), one needs to
+complete a series of steps in a particular order (clean data, run regressions,
+write paper).
+
+Benefits:
+
+* Rewards more modular work
+* Forces you to make very explicit the chain of events that your project/paper
+  needs to be created
+* Allows to easily re-run as many times as neccesary (parts of) your paper
+  without any manual checks
+
+# The simplest intro to `make`
+
+Just as a "chainer" of files:
+
+```
+$ vim Makefile
+```
+
+```bash
+all:
+    write_my_diss
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+```
+
+Running `make` will execute all of the three processes.
+
+Suppose you want to have a handy shortcut for the first two only:
+
+```bash
+all:
+    write_my_diss
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+
+hardwork:
+    pdflatex dissertation.tex
+    R CMD BATCH a_little_luck.R
+```
+
+Running `make` will still execute all of them, but running `make hardwork`
+will only run the first two.
+
+# The `make` model
+
+* **Targets**: output created from a process. 
+* **Sources**: programs/commands that produce a target
+
+For example:
+
+```bash
+dissertation.tex:write_my_diss
+    write_my_diss
+```
+
+You can chain steps and add more sources for a target:
+
+```bash
+dissertation.tex: write_my_diss
+    write_my_diss
+
+phd.txt: dissertation.tex a_little_luck.R
+    R CMD BATCH a_little_luck.R
+```
+
+If `phd.txt` does not exist, or `dissertation.tex` and/or
+`a_little_luck.R` have changed since last time it was produced, `make`
+will run the R process again, which should produce a new version of `phd.txt`
+
+# 
+
+![FOSTER](fig/fosterlogo.png)
+
+Content by [Dani Arribas-Bel](http://darribas.org) and [Thomas De Graaff](http://www.thomasdegraaff.net/),
+licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+For this session, we have borrowed important amounts of inspiration and material from **Software Carpentry**'s [session on git](http://software-carpentry.org/v5/novice/git/index.html) and the freely available book [Pro Git](http://www.git-scm.com/book/)
+
