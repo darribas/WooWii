@@ -31,4 +31,4 @@ WooWii is licensed under a [Creative Commons BY
 
 WooW-II was kindly supported by FOSTER
 
-![fosterlogo](fosterlogo.md)
+![fosterlogo](fosterlogo.png)
