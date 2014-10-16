@@ -26,3 +26,9 @@ way:
 
 WooWii is licensed under a [Creative Commons BY
 4.0](http://creativecommons.org/licenses/by/4.0/) license.
+
+## Support
+
+WooW-II was kindly supported by FOSTER
+
+![fosterlogo](fosterlogo.md)
